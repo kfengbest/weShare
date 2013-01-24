@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "../JSONKit/JSONKit.h"
+#import "../EGOImageLoading/EGOImageView/EGOImageView.h"
 
 @interface ViewController ()
 
@@ -92,11 +93,16 @@
  //   NSLog(@"result: %@", resultDic);
     NSString* midImgURL = [resultDic objectForKey:@"image"];
     
-    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:midImgURL]]];
-    UIImageView* bookImageView = [[UIImageView alloc] initWithImage:bookImage];
-    [bookImageView setFrame:CGRectMake(10, 10, bookImage.size.width, bookImage.size.height)];
-    [self.view addSubview:bookImageView];
+//    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:midImgURL]]];
+//    UIImageView* bookImageView = [[UIImageView alloc] initWithImage:bookImage];
+//    [bookImageView setFrame:CGRectMake(10, 10, bookImage.size.width, bookImage.size.height)];
+//    [self.view addSubview:bookImageView];
 
+    
+    EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"Default.png"]];
+    imageView.frame = CGRectMake(10, 10, 80, 100);
+    imageView.imageURL = [NSURL URLWithString:midImgURL];
+    [self.view addSubview:imageView];
 }
 
 
