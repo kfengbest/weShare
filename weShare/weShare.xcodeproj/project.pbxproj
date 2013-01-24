@@ -30,6 +30,9 @@
 		1270B5E716B164E6003A884A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B5E616B164E6003A884A /* CoreMedia.framework */; };
 		1270B5E916B164F0003A884A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B5E816B164F0003A884A /* AVFoundation.framework */; };
 		1270B5EB16B164FA003A884A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B5EA16B164FA003A884A /* libiconv.dylib */; };
+		1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F616B172F8003A884A /* CHANGELOG.md */; };
+		1270B5FB16B172F8003A884A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270B5F816B172F8003A884A /* JSONKit.m */; };
+		1270B5FC16B172F8003A884A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F916B172F8003A884A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +84,10 @@
 		1270B5E616B164E6003A884A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1270B5E816B164F0003A884A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1270B5EA16B164FA003A884A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		1270B5F616B172F8003A884A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		1270B5F716B172F8003A884A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		1270B5F816B172F8003A884A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		1270B5F916B172F8003A884A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +113,7 @@
 		1270B57116B15566003A884A = {
 			isa = PBXGroup;
 			children = (
-				1270B5EA16B164FA003A884A /* libiconv.dylib */,
-				1270B5E816B164F0003A884A /* AVFoundation.framework */,
-				1270B5E616B164E6003A884A /* CoreMedia.framework */,
-				1270B5E416B164D8003A884A /* CoreVideo.framework */,
-				1270B5E216B164CB003A884A /* QuartzCore.framework */,
+				1270B5F516B172F8003A884A /* JSONKit */,
 				1270B5BD16B16476003A884A /* ZBarSDK */,
 				1270B58616B15566003A884A /* weShare */,
 				1270B57F16B15566003A884A /* Frameworks */,
@@ -129,6 +132,11 @@
 		1270B57F16B15566003A884A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1270B5EA16B164FA003A884A /* libiconv.dylib */,
+				1270B5E816B164F0003A884A /* AVFoundation.framework */,
+				1270B5E616B164E6003A884A /* CoreMedia.framework */,
+				1270B5E416B164D8003A884A /* CoreVideo.framework */,
+				1270B5E216B164CB003A884A /* QuartzCore.framework */,
 				1270B58016B15566003A884A /* UIKit.framework */,
 				1270B58216B15566003A884A /* Foundation.framework */,
 				1270B58416B15566003A884A /* CoreGraphics.framework */,
@@ -229,6 +237,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1270B5F516B172F8003A884A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				1270B5F616B172F8003A884A /* CHANGELOG.md */,
+				1270B5F716B172F8003A884A /* JSONKit.h */,
+				1270B5F816B172F8003A884A /* JSONKit.m */,
+				1270B5F916B172F8003A884A /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +310,8 @@
 				1270B5DF16B16476003A884A /* zbar-help.html in Resources */,
 				1270B5E016B16476003A884A /* zbar-helpicons.png in Resources */,
 				1270B5E116B16476003A884A /* zbar-samples.png in Resources */,
+				1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */,
+				1270B5FC16B172F8003A884A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +325,7 @@
 				1270B58D16B15566003A884A /* main.m in Sources */,
 				1270B59116B15566003A884A /* AppDelegate.m in Sources */,
 				1270B5A016B15567003A884A /* ViewController.m in Sources */,
+				1270B5FB16B172F8003A884A /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,6 @@
 
 - (IBAction)button:(id)sender;
 
+- (void) loadBookByIsbn:(NSString*) isbn;
+
 @end

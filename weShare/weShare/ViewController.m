@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "../JSONKit/JSONKit.h"
 
 @interface ViewController ()
 
@@ -72,7 +73,31 @@
     
     NSString* str =  symbol.data ;
     NSLog(str);
-    
+    //[self loadBook:@"1220562"];
+    [self loadBookByIsbn:str];
 }
+
+- (void) loadBookByIsbn:(NSString*) isbn
+{
+    static NSString* s_DoubanAPI = @"https://api.douban.com/v2/book/isbn/";
+    NSString* bookAPI = [s_DoubanAPI stringByAppendingString:isbn];    
+    
+    NSURL* url = [NSURL URLWithString:bookAPI];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSError* err = nil;
+    NSURLResponse* response = nil;
+    NSData* jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSDictionary* resultDic = [jsonData objectFromJSONData];
+    
+ //   NSLog(@"result: %@", resultDic);
+    NSString* midImgURL = [resultDic objectForKey:@"image"];
+    
+    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:midImgURL]]];
+    UIImageView* bookImageView = [[UIImageView alloc] initWithImage:bookImage];
+    [bookImageView setFrame:CGRectMake(10, 10, bookImage.size.width, bookImage.size.height)];
+    [self.view addSubview:bookImageView];
+
+}
+
 
 @end
