@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<ZBarReaderDelegate>
+{
+    
+}
+
+- (IBAction)button:(id)sender;
 
 @end
