@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "../ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
+#import "../SideBar/SideBarViewController.h"
 
-@interface ViewController : UIViewController<ZBarReaderDelegate>
+@interface ViewController : SideBarViewController<ZBarReaderDelegate>
 {
     
 }

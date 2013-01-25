@@ -8,30 +8,33 @@
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
+                    <view key="view" contentMode="scaleToFill" id="Vrz-R4-QOn">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMb-jY-JrL">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button:" destination="2" eventType="touchUpInside" id="M0A-r9-kre"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-II-2aH">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89X-YR-wH7">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="kMb-jY-JrL" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Rzv-8c-wLf"/>
-                            <constraint firstAttribute="trailing" secondItem="kMb-jY-JrL" secondAttribute="trailing" constant="38" id="kw9-6V-RO6"/>
+                            <constraint firstAttribute="trailing" secondItem="89X-YR-wH7" secondAttribute="trailing" constant="-5" id="80S-3Z-nvg"/>
+                            <constraint firstItem="1fQ-II-2aH" firstAttribute="bottom" secondItem="Vrz-R4-QOn" secondAttribute="bottom" type="default" id="D5i-QO-lfR"/>
+                            <constraint firstItem="1fQ-II-2aH" firstAttribute="leading" secondItem="Vrz-R4-QOn" secondAttribute="leading" type="default" id="NKU-Fy-WWV"/>
+                            <constraint firstItem="1fQ-II-2aH" firstAttribute="top" secondItem="Vrz-R4-QOn" secondAttribute="top" type="default" id="S3d-vN-jtC"/>
+                            <constraint firstItem="89X-YR-wH7" firstAttribute="bottom" secondItem="Vrz-R4-QOn" secondAttribute="bottom" type="default" id="g2N-8P-Cb0"/>
+                            <constraint firstItem="1fQ-II-2aH" firstAttribute="trailing" secondItem="Vrz-R4-QOn" secondAttribute="trailing" type="default" id="hFL-24-Nhx"/>
+                            <constraint firstItem="89X-YR-wH7" firstAttribute="leading" secondItem="Vrz-R4-QOn" secondAttribute="leading" type="default" id="jVZ-A0-rt9"/>
+                            <constraint firstItem="89X-YR-wH7" firstAttribute="top" secondItem="Vrz-R4-QOn" secondAttribute="top" type="default" id="vgS-7f-ENE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="89X-YR-wH7" id="Wtl-Pu-A3p"/>
+                        <outlet property="navBackView" destination="1fQ-II-2aH" id="TGf-aM-ux9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +44,14 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="ViewController" superclassName="UIViewController">
+        <class className="SidebarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="navBackView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="SidebarViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="button:"/>
