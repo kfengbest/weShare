@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A178q" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A178q" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -12,24 +12,16 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-II-2aH">
+                            <view contentMode="scaleToFill" id="1fQ-II-2aH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89X-YR-wH7">
+                            <view contentMode="scaleToFill" id="89X-YR-wH7">
+                                <rect key="frame" x="0.0" y="0.0" width="325" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="89X-YR-wH7" secondAttribute="trailing" constant="-5" id="80S-3Z-nvg"/>
-                            <constraint firstItem="1fQ-II-2aH" firstAttribute="bottom" secondItem="Vrz-R4-QOn" secondAttribute="bottom" type="default" id="D5i-QO-lfR"/>
-                            <constraint firstItem="1fQ-II-2aH" firstAttribute="leading" secondItem="Vrz-R4-QOn" secondAttribute="leading" type="default" id="NKU-Fy-WWV"/>
-                            <constraint firstItem="1fQ-II-2aH" firstAttribute="top" secondItem="Vrz-R4-QOn" secondAttribute="top" type="default" id="S3d-vN-jtC"/>
-                            <constraint firstItem="89X-YR-wH7" firstAttribute="bottom" secondItem="Vrz-R4-QOn" secondAttribute="bottom" type="default" id="g2N-8P-Cb0"/>
-                            <constraint firstItem="1fQ-II-2aH" firstAttribute="trailing" secondItem="Vrz-R4-QOn" secondAttribute="trailing" type="default" id="hFL-24-Nhx"/>
-                            <constraint firstItem="89X-YR-wH7" firstAttribute="leading" secondItem="Vrz-R4-QOn" secondAttribute="leading" type="default" id="jVZ-A0-rt9"/>
-                            <constraint firstItem="89X-YR-wH7" firstAttribute="top" secondItem="Vrz-R4-QOn" secondAttribute="top" type="default" id="vgS-7f-ENE"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="89X-YR-wH7" id="Wtl-Pu-A3p"/>
@@ -41,17 +33,14 @@
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SidebarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SidebarViewController.h"/>
+        <class className="SideBarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideBarViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="navBackView" candidateClass="UIView"/>
             </relationships>
         </class>
-        <class className="ViewController" superclassName="SidebarViewController">
+        <class className="ViewController" superclassName="SideBarViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="button:"/>
