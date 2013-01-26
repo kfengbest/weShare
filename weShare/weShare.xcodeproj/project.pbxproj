@@ -36,6 +36,10 @@
 		12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DCC16B25F08000DA40B /* SideBarViewController.m */; };
 		12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */; };
 		12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */; };
+		12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */; };
+		12BEAE1516B3CEA700D27223 /* FriendsPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */; };
+		12BEAE1916B3CF2800D27223 /* UserPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */; };
+		12BEAE1A16B3CF2800D27223 /* UserPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */; };
 		12CB15DB16B18B9E00B3BA9A /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15CE16B18B9E00B3BA9A /* EGOCache.m */; };
 		12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 12CB15CF16B18B9E00B3BA9A /* README.mdown */; };
 		12CB15DD16B18B9E00B3BA9A /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D216B18B9E00B3BA9A /* EGOImageButton.m */; };
@@ -104,6 +108,12 @@
 		12BC4DD516B25F74000DA40B /* RightSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSideBarViewController.h; sourceTree = "<group>"; };
 		12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSideBarViewController.m; sourceTree = "<group>"; };
 		12BC4DDA16B25FD5000DA40B /* SideBarSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarSelectedDelegate.h; sourceTree = "<group>"; };
+		12BEAE1116B3CEA700D27223 /* FriendsPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsPanelViewController.h; sourceTree = "<group>"; };
+		12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsPanelViewController.m; sourceTree = "<group>"; };
+		12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsPanelViewController.xib; sourceTree = "<group>"; };
+		12BEAE1616B3CF2800D27223 /* UserPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPanelViewController.h; sourceTree = "<group>"; };
+		12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPanelViewController.m; sourceTree = "<group>"; };
+		12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserPanelViewController.xib; sourceTree = "<group>"; };
 		12CB15CD16B18B9E00B3BA9A /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		12CB15CE16B18B9E00B3BA9A /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		12CB15CF16B18B9E00B3BA9A /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
@@ -183,6 +193,12 @@
 				1270B59E16B15567003A884A /* ViewController.h */,
 				1270B59F16B15567003A884A /* ViewController.m */,
 				1270B58716B15566003A884A /* Supporting Files */,
+				12BEAE1116B3CEA700D27223 /* FriendsPanelViewController.h */,
+				12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */,
+				12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */,
+				12BEAE1616B3CF2800D27223 /* UserPanelViewController.h */,
+				12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */,
+				12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */,
 			);
 			path = weShare;
 			sourceTree = "<group>";
@@ -406,6 +422,8 @@
 				1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */,
 				1270B5FC16B172F8003A884A /* README.md in Resources */,
 				12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */,
+				12BEAE1516B3CEA700D27223 /* FriendsPanelViewController.xib in Resources */,
+				12BEAE1A16B3CF2800D27223 /* UserPanelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +446,8 @@
 				12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */,
 				12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */,
 				12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */,
+				12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.m in Sources */,
+				12BEAE1916B3CF2800D27223 /* UserPanelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
