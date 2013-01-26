@@ -7,10 +7,13 @@
 //
 
 #import "FriendsPanelViewController.h"
+#import "DataModel/Friend.h"
+#import <vector>
+#import "StringConvert.h"
 
 @interface FriendsPanelViewController ()
 {
-    NSMutableArray* _friendsLists;
+    std::vector<Friend*> _friendsVec;
 }
 
 @end
@@ -31,8 +34,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+        
     
-    _friendsLists = [[NSMutableArray alloc] initWithObjects:@"Kaven", @"Feng", @"Amy",@"Dan", nil];
+    Friend* f1 = new Friend();
+    f1->name(L"凯");
+    
+    Friend* f2 = new Friend();
+    f2->name(L"Feng");
+    
+    _friendsVec.push_back(f1);
+    _friendsVec.push_back(f2);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +58,7 @@
 // TableView.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_friendsLists count];
+    return _friendsVec.size();
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,7 +70,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    cell.textLabel.text = [_friendsLists objectAtIndex:indexPath.row];
+        
+    int n = (int)indexPath.row;
+    std::wstring wStr = _friendsVec.at(n)->name();
+    cell.textLabel.text = [NSString stringWithwstring:wStr];
     
     return cell;
 }

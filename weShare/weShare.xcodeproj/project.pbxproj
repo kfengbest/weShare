@@ -18,7 +18,7 @@
 		1270B59716B15566003A884A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270B59616B15566003A884A /* Default-568h@2x.png */; };
 		1270B59A16B15567003A884A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1270B59816B15566003A884A /* MainStoryboard_iPhone.storyboard */; };
 		1270B59D16B15567003A884A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1270B59B16B15567003A884A /* MainStoryboard_iPad.storyboard */; };
-		1270B5A016B15567003A884A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270B59F16B15567003A884A /* ViewController.m */; };
+		1270B5A016B15567003A884A /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1270B59F16B15567003A884A /* ViewController.mm */; };
 		1270B5DC16B16476003A884A /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B5D516B16476003A884A /* libzbar.a */; };
 		1270B5DD16B16476003A884A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5D616B16476003A884A /* README */; };
 		1270B5DE16B16476003A884A /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5D816B16476003A884A /* zbar-back.png */; };
@@ -33,12 +33,15 @@
 		1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F616B172F8003A884A /* CHANGELOG.md */; };
 		1270B5FB16B172F8003A884A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270B5F816B172F8003A884A /* JSONKit.m */; };
 		1270B5FC16B172F8003A884A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F916B172F8003A884A /* README.md */; };
+		128EFA1116B4190B00CEAD07 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA0F16B4190B00CEAD07 /* User.cpp */; };
+		128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1216B4191F00CEAD07 /* Book.cpp */; };
+		128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1816B4194F00CEAD07 /* Friend.cpp */; };
 		12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DCC16B25F08000DA40B /* SideBarViewController.m */; };
 		12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */; };
 		12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */; };
-		12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */; };
+		12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.mm */; };
 		12BEAE1516B3CEA700D27223 /* FriendsPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */; };
-		12BEAE1916B3CF2800D27223 /* UserPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */; };
+		12BEAE1916B3CF2800D27223 /* UserPanelViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12BEAE1716B3CF2800D27223 /* UserPanelViewController.mm */; };
 		12BEAE1A16B3CF2800D27223 /* UserPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */; };
 		12CB15DB16B18B9E00B3BA9A /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15CE16B18B9E00B3BA9A /* EGOCache.m */; };
 		12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 12CB15CF16B18B9E00B3BA9A /* README.mdown */; };
@@ -65,7 +68,7 @@
 		1270B59916B15567003A884A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		1270B59C16B15567003A884A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		1270B59E16B15567003A884A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1270B59F16B15567003A884A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1270B59F16B15567003A884A /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		1270B5C116B16476003A884A /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		1270B5C216B16476003A884A /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		1270B5C316B16476003A884A /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -101,6 +104,13 @@
 		1270B5F716B172F8003A884A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		1270B5F816B172F8003A884A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1270B5F916B172F8003A884A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		128EFA0F16B4190B00CEAD07 /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = DataModel/User.cpp; sourceTree = "<group>"; };
+		128EFA1016B4190B00CEAD07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = DataModel/User.h; sourceTree = "<group>"; };
+		128EFA1216B4191F00CEAD07 /* Book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Book.cpp; path = DataModel/Book.cpp; sourceTree = "<group>"; };
+		128EFA1316B4191F00CEAD07 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = DataModel/Book.h; sourceTree = "<group>"; };
+		128EFA1816B4194F00CEAD07 /* Friend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Friend.cpp; path = DataModel/Friend.cpp; sourceTree = "<group>"; };
+		128EFA1916B4194F00CEAD07 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = DataModel/Friend.h; sourceTree = "<group>"; };
+		128EFA1B16B4203D00CEAD07 /* StringConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConvert.h; sourceTree = "<group>"; };
 		12BC4DCB16B25F08000DA40B /* SideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarViewController.h; sourceTree = "<group>"; };
 		12BC4DCC16B25F08000DA40B /* SideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarViewController.m; sourceTree = "<group>"; };
 		12BC4DD016B25F63000DA40B /* LeftSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideBarViewController.h; sourceTree = "<group>"; };
@@ -109,10 +119,10 @@
 		12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSideBarViewController.m; sourceTree = "<group>"; };
 		12BC4DDA16B25FD5000DA40B /* SideBarSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarSelectedDelegate.h; sourceTree = "<group>"; };
 		12BEAE1116B3CEA700D27223 /* FriendsPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsPanelViewController.h; sourceTree = "<group>"; };
-		12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsPanelViewController.m; sourceTree = "<group>"; };
+		12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FriendsPanelViewController.mm; sourceTree = "<group>"; };
 		12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsPanelViewController.xib; sourceTree = "<group>"; };
 		12BEAE1616B3CF2800D27223 /* UserPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPanelViewController.h; sourceTree = "<group>"; };
-		12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPanelViewController.m; sourceTree = "<group>"; };
+		12BEAE1716B3CF2800D27223 /* UserPanelViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UserPanelViewController.mm; sourceTree = "<group>"; };
 		12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserPanelViewController.xib; sourceTree = "<group>"; };
 		12CB15CD16B18B9E00B3BA9A /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		12CB15CE16B18B9E00B3BA9A /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
@@ -186,19 +196,21 @@
 		1270B58616B15566003A884A /* weShare */ = {
 			isa = PBXGroup;
 			children = (
+				128EFA0D16B418EB00CEAD07 /* DataModel */,
 				1270B58F16B15566003A884A /* AppDelegate.h */,
 				1270B59016B15566003A884A /* AppDelegate.m */,
 				1270B59816B15566003A884A /* MainStoryboard_iPhone.storyboard */,
 				1270B59B16B15567003A884A /* MainStoryboard_iPad.storyboard */,
 				1270B59E16B15567003A884A /* ViewController.h */,
-				1270B59F16B15567003A884A /* ViewController.m */,
+				1270B59F16B15567003A884A /* ViewController.mm */,
 				1270B58716B15566003A884A /* Supporting Files */,
 				12BEAE1116B3CEA700D27223 /* FriendsPanelViewController.h */,
-				12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.m */,
+				12BEAE1216B3CEA700D27223 /* FriendsPanelViewController.mm */,
 				12BEAE1316B3CEA700D27223 /* FriendsPanelViewController.xib */,
 				12BEAE1616B3CF2800D27223 /* UserPanelViewController.h */,
-				12BEAE1716B3CF2800D27223 /* UserPanelViewController.m */,
+				12BEAE1716B3CF2800D27223 /* UserPanelViewController.mm */,
 				12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */,
+				128EFA1B16B4203D00CEAD07 /* StringConvert.h */,
 			);
 			path = weShare;
 			sourceTree = "<group>";
@@ -291,6 +303,19 @@
 				1270B5F916B172F8003A884A /* README.md */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		128EFA0D16B418EB00CEAD07 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				128EFA1816B4194F00CEAD07 /* Friend.cpp */,
+				128EFA1916B4194F00CEAD07 /* Friend.h */,
+				128EFA0F16B4190B00CEAD07 /* User.cpp */,
+				128EFA1016B4190B00CEAD07 /* User.h */,
+				128EFA1216B4191F00CEAD07 /* Book.cpp */,
+				128EFA1316B4191F00CEAD07 /* Book.h */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 		12BC4DC916B25ECC000DA40B /* SideBar */ = {
@@ -436,7 +461,7 @@
 			files = (
 				1270B58D16B15566003A884A /* main.m in Sources */,
 				1270B59116B15566003A884A /* AppDelegate.m in Sources */,
-				1270B5A016B15567003A884A /* ViewController.m in Sources */,
+				1270B5A016B15567003A884A /* ViewController.mm in Sources */,
 				1270B5FB16B172F8003A884A /* JSONKit.m in Sources */,
 				12CB15DB16B18B9E00B3BA9A /* EGOCache.m in Sources */,
 				12CB15DD16B18B9E00B3BA9A /* EGOImageButton.m in Sources */,
@@ -446,8 +471,11 @@
 				12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */,
 				12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */,
 				12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */,
-				12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.m in Sources */,
-				12BEAE1916B3CF2800D27223 /* UserPanelViewController.m in Sources */,
+				12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.mm in Sources */,
+				12BEAE1916B3CF2800D27223 /* UserPanelViewController.mm in Sources */,
+				128EFA1116B4190B00CEAD07 /* User.cpp in Sources */,
+				128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */,
+				128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
