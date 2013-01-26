@@ -35,9 +35,7 @@
 		1270B5FC16B172F8003A884A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F916B172F8003A884A /* README.md */; };
 		12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DCC16B25F08000DA40B /* SideBarViewController.m */; };
 		12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */; };
-		12BC4DD416B25F63000DA40B /* LeftSideBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BC4DD216B25F63000DA40B /* LeftSideBarViewController.xib */; };
 		12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */; };
-		12BC4DD916B25F74000DA40B /* RightSideBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12BC4DD716B25F74000DA40B /* RightSideBarViewController.xib */; };
 		12CB15DB16B18B9E00B3BA9A /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15CE16B18B9E00B3BA9A /* EGOCache.m */; };
 		12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 12CB15CF16B18B9E00B3BA9A /* README.mdown */; };
 		12CB15DD16B18B9E00B3BA9A /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D216B18B9E00B3BA9A /* EGOImageButton.m */; };
@@ -103,10 +101,8 @@
 		12BC4DCC16B25F08000DA40B /* SideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarViewController.m; sourceTree = "<group>"; };
 		12BC4DD016B25F63000DA40B /* LeftSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideBarViewController.h; sourceTree = "<group>"; };
 		12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideBarViewController.m; sourceTree = "<group>"; };
-		12BC4DD216B25F63000DA40B /* LeftSideBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftSideBarViewController.xib; sourceTree = "<group>"; };
 		12BC4DD516B25F74000DA40B /* RightSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSideBarViewController.h; sourceTree = "<group>"; };
 		12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSideBarViewController.m; sourceTree = "<group>"; };
-		12BC4DD716B25F74000DA40B /* RightSideBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightSideBarViewController.xib; sourceTree = "<group>"; };
 		12BC4DDA16B25FD5000DA40B /* SideBarSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarSelectedDelegate.h; sourceTree = "<group>"; };
 		12CB15CD16B18B9E00B3BA9A /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		12CB15CE16B18B9E00B3BA9A /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
@@ -288,10 +284,8 @@
 				12BC4DCC16B25F08000DA40B /* SideBarViewController.m */,
 				12BC4DD016B25F63000DA40B /* LeftSideBarViewController.h */,
 				12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */,
-				12BC4DD216B25F63000DA40B /* LeftSideBarViewController.xib */,
 				12BC4DD516B25F74000DA40B /* RightSideBarViewController.h */,
 				12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */,
-				12BC4DD716B25F74000DA40B /* RightSideBarViewController.xib */,
 				12BC4DDA16B25FD5000DA40B /* SideBarSelectedDelegate.h */,
 			);
 			path = SideBar;
@@ -412,8 +406,6 @@
 				1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */,
 				1270B5FC16B172F8003A884A /* README.md in Resources */,
 				12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */,
-				12BC4DD416B25F63000DA40B /* LeftSideBarViewController.xib in Resources */,
-				12BC4DD916B25F74000DA40B /* RightSideBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
