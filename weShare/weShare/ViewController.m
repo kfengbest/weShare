@@ -10,8 +10,13 @@
 #import "../JSONKit/JSONKit.h"
 #import "../EGOImageLoading/EGOImageView/EGOImageView.h"
 
-@interface ViewController ()
+#import "FriendsPanelViewController.h"
+#import "UserPanelViewController.h"
 
+@interface ViewController ()
+{
+    NSMutableArray* _booksList;
+}
 @end
 
 @implementation ViewController
@@ -20,12 +25,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _booksList = [[NSMutableArray alloc] initWithObjects:@"kaven",@"feng", nil];
 }
 
 -(LeftSideBarViewController*) createLeftSideBarController
 {
     if (self.leftSideBarViewController == nil) {
-        self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:@"UserPanelViewController" bundle:nil];
+        self.leftSideBarViewController = [[UserPanelViewController alloc] initWithNibName:@"UserPanelViewController" bundle:nil];
     }
     
     return self.leftSideBarViewController;
@@ -34,7 +41,7 @@
 -(RightSideBarViewController*) createRightSideBarController
 {
     if (self.rightSideBarViewController == nil) {
-        self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:@"FriendsPanelViewController" bundle:nil];
+        self.rightSideBarViewController = [[FriendsPanelViewController alloc] initWithNibName:@"FriendsPanelViewController" bundle:nil];
     }
     
     return self.rightSideBarViewController;
@@ -47,7 +54,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)button:(id)sender {
+- (IBAction)onScan:(id)sender {
     
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
@@ -123,6 +130,7 @@
     imageView.imageURL = [NSURL URLWithString:midImgURL];
     [self.view addSubview:imageView];
 }
+
 
 
 @end

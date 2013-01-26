@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "../SideBar/RightSideBarViewController.h"
 
-@interface FriendsPanelViewController : RightSideBarViewController
+@interface FriendsPanelViewController : RightSideBarViewController<UITableViewDataSource, UITableViewDelegate>
+{
+    
+}
+
+@property(strong, nonatomic) IBOutlet UITableView* friendsTableView;
 
 @end

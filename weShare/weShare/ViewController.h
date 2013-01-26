@@ -10,12 +10,14 @@
 #import "../ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
 #import "../SideBar/SideBarViewController.h"
 
-@interface ViewController : SideBarViewController<ZBarReaderDelegate, UINavigationControllerDelegate>
+@interface ViewController : SideBarViewController<ZBarReaderDelegate>
 {
     
 }
 
-- (IBAction)button:(id)sender;
+@property(strong, nonatomic) IBOutlet UICollectionView* booksCollectionView;
+
+- (IBAction)onScan:(id)sender;
 
 - (void) loadBookByIsbn:(NSString*) isbn;
 
