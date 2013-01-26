@@ -22,6 +22,25 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(LeftSideBarViewController*) createLeftSideBarController
+{
+    if (self.leftSideBarViewController == nil) {
+        self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:@"UserPanelViewController" bundle:nil];
+    }
+    
+    return self.leftSideBarViewController;
+}
+
+-(RightSideBarViewController*) createRightSideBarController
+{
+    if (self.rightSideBarViewController == nil) {
+        self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:@"FriendsPanelViewController" bundle:nil];
+    }
+    
+    return self.rightSideBarViewController;
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

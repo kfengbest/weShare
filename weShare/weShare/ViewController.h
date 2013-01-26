@@ -10,7 +10,7 @@
 #import "../ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
 #import "../SideBar/SideBarViewController.h"
 
-@interface ViewController : SideBarViewController<ZBarReaderDelegate>
+@interface ViewController : SideBarViewController<ZBarReaderDelegate, UINavigationControllerDelegate>
 {
     
 }

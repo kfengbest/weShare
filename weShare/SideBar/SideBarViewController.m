@@ -51,15 +51,17 @@ const float MoveAnimationDuration = 0.3;
         rootViewCon = nil;
     }
     rootViewCon = self;
+    self.rightSideBarViewController = nil;
+    self.leftSideBarViewController = nil;
     
     // init internal state.
     sideBarShowing = NO;
     currentTranslate = 0;
     
     // create left/right viewcontroller and added them as child controller;
-    self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:@"LeftSideBarViewController" bundle:nil];
+    self.leftSideBarViewController = [self createLeftSideBarController];
     //self.leftSideBarViewController.delegate = self;
-    self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:@"RightSideBarViewController" bundle:nil];
+    self.rightSideBarViewController = [self createRightSideBarController];
     //self.rightSideBarViewController.delegate = self;
     [self addChildViewController:self.leftSideBarViewController];
     [self addChildViewController:self.rightSideBarViewController];
@@ -72,17 +74,31 @@ const float MoveAnimationDuration = 0.3;
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panInContentView:)];
     [self.contentView addGestureRecognizer:_panGestureRecognizer];
     
-    
-    self.leftSideBarViewController.view.backgroundColor = [UIColor redColor];
-    self.rightSideBarViewController.view.backgroundColor = [UIColor greenColor];
-    [self.view bringSubviewToFront:self.contentView];
-    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// must override this method in sub class.
+-(LeftSideBarViewController*) createLeftSideBarController
+{
+    if (self.leftSideBarViewController == nil) {
+        self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    
+    self.leftSideBarViewController.view.backgroundColor = [UIColor redColor];
+    return self.leftSideBarViewController;
+}
+-(RightSideBarViewController*) createRightSideBarController
+{
+    if (self.rightSideBarViewController == nil) {
+        self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    self.rightSideBarViewController.view.backgroundColor = [UIColor greenColor];
+    return self.rightSideBarViewController;
 }
 
 // protocol SideBarSelectedDelegate...

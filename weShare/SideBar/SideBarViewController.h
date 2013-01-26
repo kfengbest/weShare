@@ -21,4 +21,7 @@
 @property(strong, nonatomic) LeftSideBarViewController* leftSideBarViewController;
 @property(strong, nonatomic) RightSideBarViewController* rightSideBarViewController;
 
+-(LeftSideBarViewController*) createLeftSideBarController;
+-(RightSideBarViewController*) createRightSideBarController;
+
 @end
