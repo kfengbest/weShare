@@ -35,7 +35,7 @@
     UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
 //    [self.collectionView registerClass:[BookCell class] forCellWithReuseIdentifier:@"BookCellID"];
-  
+//  
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(100, 150)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -143,18 +143,18 @@
     NSString* midImgURL = [resultDic objectForKey:@"image"];
     book.imageUrl = midImgURL;
     
-    
+    // sync loading images.
 //    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:midImgURL]]];
 //    UIImageView* bookImageView = [[UIImageView alloc] initWithImage:bookImage];
 //    [bookImageView setFrame:CGRectMake(10, 10, bookImage.size.width, bookImage.size.height)];
 //    [self.view addSubview:bookImageView];
 
-    
-//    EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"Default.png"]];
-//    imageView.frame = CGRectMake(10, 10, 80, 100);
-//    imageView.imageURL = [NSURL URLWithString:midImgURL];
-//   // [self.view addSubview:imageView];
-//    book.imageDownloaded = imageView.image;
+    // Async loading image.
+    EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:book.imageScaned];
+///    imageView.frame = CGRectMake(10, 10, 80, 100);
+    imageView.imageURL = [NSURL URLWithString:midImgURL];
+   // [self.view addSubview:imageView];
+    book.imageDownloaded = imageView.image;
     
 }
 
@@ -214,13 +214,21 @@
     int n = (int)indexPath.row;
     NBook* pBook = (NBook*)[_booksList objectAtIndex:n];
     
-//    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
-//
-    
-   // cell.imageView.image = [UIImage imageNamed:@"battle.png"];
 
-    return cell;
+
+    UIImageView* iv = (UIImageView*)[cell viewWithTag:1];
     
+  //  UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
+   // iv.image = bookImage;  // network image
+   // iv.image = pBook.imageScaned;
+    
+    if (pBook.imageDownloaded != nil) {
+        iv.image = pBook.imageDownloaded;
+    }else{
+        iv.image = pBook.imageScaned;
+    }
+    
+    return cell;
     
 }
 
