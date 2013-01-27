@@ -27,6 +27,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     _booksList = [[NSMutableArray alloc] initWithObjects:@"kaven",@"feng", nil];
+    
+    //[self testWS];
 }
 
 -(LeftSideBarViewController*) createLeftSideBarController
@@ -131,6 +133,44 @@
     [self.view addSubview:imageView];
 }
 
+-(void) testWS
+{
+    static NSString* urlStr1 = @"http://services.sketchbook.cn/openlib/service_test/api.php?op=Login&email=tom.dong@openlib.com&localpwd=c01abe74c44be79ce0bec6f042353064";
+    NSURL* url1 = [NSURL URLWithString:urlStr1];
+    NSURLRequest* req = [NSURLRequest requestWithURL:url1];
+    NSError* err = nil;
+    NSURLResponse* response = nil;
+    NSData* resData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&err];
+    NSString* strSession = [[NSString alloc] initWithData:resData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", strSession);
+    
+    static NSString* s_strApi = @"http://services.sketchbook.cn/openlib/service_test/api.php?";
+    static NSString* s_strOp = @"op=";
+    static NSString* s_strSessionParm = @"&sessionid=";
+    
+    NSString* s_GetUserInfoBySession = @"GetUserInfoBySession";
+    NSString* s_GetBooksBySession = @"GetBooksBySession";
 
+    NSString *strGetUserInfo = [NSString stringWithFormat:@"%@%@%@%@%@",s_strApi,s_strOp, s_GetUserInfoBySession,s_strSessionParm, strSession];
+    NSURL* urlGetUser = [NSURL URLWithString:strGetUserInfo];
+    NSURLRequest* reqGetUser = [NSURLRequest requestWithURL:urlGetUser];
+    NSError* err2 = nil;
+    NSURLResponse* resGetUser = nil;
+    NSData* userData = [NSURLConnection sendSynchronousRequest:reqGetUser returningResponse:&resGetUser error:&err2];
+    NSDictionary* userDic = [userData objectFromJSONData];
+    NSLog(@"user: %@", userDic);
+
+    NSString* strGetBooks = [NSString stringWithFormat:@"%@%@%@%@%@", s_strApi, s_strOp, s_GetBooksBySession, s_strSessionParm, strSession];
+    NSURL* urlGetBooks = [NSURL URLWithString:strGetBooks];
+    NSURLRequest* reqGetBooks = [NSURLRequest requestWithURL:urlGetBooks];
+    NSURLResponse* resBooks = nil;
+    NSError* err3 = nil;
+    NSData* booksData = [NSURLConnection sendSynchronousRequest:reqGetBooks returningResponse:&resBooks error:&err3];
+    NSDictionary* booksDic = [booksData objectFromJSONData];
+    NSLog(@"books: %@", booksDic);
+    
+    
+    
+}
 
 @end
