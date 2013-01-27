@@ -83,19 +83,19 @@ const float MoveAnimationDuration = 0.3;
 }
 
 // must override this method in sub class.
--(LeftSideBarViewController*) createLeftSideBarController
+-(UIViewController*) createLeftSideBarController
 {
     if (self.leftSideBarViewController == nil) {
-        self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:nil bundle:nil];
+        self.leftSideBarViewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     }
     
     self.leftSideBarViewController.view.backgroundColor = [UIColor redColor];
     return self.leftSideBarViewController;
 }
--(RightSideBarViewController*) createRightSideBarController
+-(UIViewController*) createRightSideBarController
 {
     if (self.rightSideBarViewController == nil) {
-        self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:nil bundle:nil];
+        self.rightSideBarViewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
     }
     self.rightSideBarViewController.view.backgroundColor = [UIColor greenColor];
     return self.rightSideBarViewController;

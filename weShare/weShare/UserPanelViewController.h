@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../SideBar/LeftSideBarViewController.h"
 
-@interface UserPanelViewController : LeftSideBarViewController
-
+@interface UserPanelViewController : UIViewController
 @end

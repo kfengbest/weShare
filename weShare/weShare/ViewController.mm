@@ -31,7 +31,7 @@
     //[self testWS];
 }
 
--(LeftSideBarViewController*) createLeftSideBarController
+-(UIViewController*) createLeftSideBarController
 {
     if (self.leftSideBarViewController == nil) {
         self.leftSideBarViewController = [[UserPanelViewController alloc] initWithNibName:@"UserPanelViewController" bundle:nil];
@@ -40,7 +40,7 @@
     return self.leftSideBarViewController;
 }
 
--(RightSideBarViewController*) createRightSideBarController
+-(UIViewController*) createRightSideBarController
 {
     if (self.rightSideBarViewController == nil) {
         self.rightSideBarViewController = [[FriendsPanelViewController alloc] initWithNibName:@"FriendsPanelViewController" bundle:nil];

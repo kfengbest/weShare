@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../SideBar/RightSideBarViewController.h"
 
-@interface FriendsPanelViewController : RightSideBarViewController<UITableViewDataSource, UITableViewDelegate>
+@interface FriendsPanelViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     
 }
