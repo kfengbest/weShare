@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1210763E16B4CB3B0076AF3B /* BookCell.m */; };
 		1210764216B4D3890076AF3B /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1210764116B4D3890076AF3B /* BookCell.xib */; };
+		1224CEB416B4F0310070B751 /* battle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1224CEB316B4F0310070B751 /* battle.png */; };
 		1270B58116B15566003A884A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58016B15566003A884A /* UIKit.framework */; };
 		1270B58316B15566003A884A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58216B15566003A884A /* Foundation.framework */; };
 		1270B58516B15566003A884A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58416B15566003A884A /* CoreGraphics.framework */; };
@@ -35,6 +36,7 @@
 		1270B5FA16B172F8003A884A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F616B172F8003A884A /* CHANGELOG.md */; };
 		1270B5FB16B172F8003A884A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270B5F816B172F8003A884A /* JSONKit.m */; };
 		1270B5FC16B172F8003A884A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F916B172F8003A884A /* README.md */; };
+		127E984016B4E82900118B79 /* NBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E983F16B4E82900118B79 /* NBook.m */; };
 		128EFA1116B4190B00CEAD07 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA0F16B4190B00CEAD07 /* User.cpp */; };
 		128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1216B4191F00CEAD07 /* Book.cpp */; };
 		128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1816B4194F00CEAD07 /* Friend.cpp */; };
@@ -57,6 +59,7 @@
 		1210763D16B4CB3B0076AF3B /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		1210763E16B4CB3B0076AF3B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		1210764116B4D3890076AF3B /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
+		1224CEB316B4F0310070B751 /* battle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battle.png; sourceTree = "<group>"; };
 		1270B57C16B15566003A884A /* weShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270B58016B15566003A884A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1270B58216B15566003A884A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +112,8 @@
 		1270B5F716B172F8003A884A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		1270B5F816B172F8003A884A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1270B5F916B172F8003A884A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		127E983E16B4E82900118B79 /* NBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBook.h; path = DataModel/NBook.h; sourceTree = "<group>"; };
+		127E983F16B4E82900118B79 /* NBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBook.m; path = DataModel/NBook.m; sourceTree = "<group>"; };
 		128EFA0F16B4190B00CEAD07 /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = DataModel/User.cpp; sourceTree = "<group>"; };
 		128EFA1016B4190B00CEAD07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = DataModel/User.h; sourceTree = "<group>"; };
 		128EFA1216B4191F00CEAD07 /* Book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Book.cpp; path = DataModel/Book.cpp; sourceTree = "<group>"; };
@@ -226,6 +231,7 @@
 		1270B58716B15566003A884A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1224CEB316B4F0310070B751 /* battle.png */,
 				1270B58816B15566003A884A /* weShare-Info.plist */,
 				1270B58916B15566003A884A /* InfoPlist.strings */,
 				1270B58C16B15566003A884A /* main.m */,
@@ -322,6 +328,8 @@
 				128EFA1016B4190B00CEAD07 /* User.h */,
 				128EFA1216B4191F00CEAD07 /* Book.cpp */,
 				128EFA1316B4191F00CEAD07 /* Book.h */,
+				127E983E16B4E82900118B79 /* NBook.h */,
+				127E983F16B4E82900118B79 /* NBook.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 				12BEAE1516B3CEA700D27223 /* FriendsPanelViewController.xib in Resources */,
 				12BEAE1A16B3CF2800D27223 /* UserPanelViewController.xib in Resources */,
 				1210764216B4D3890076AF3B /* BookCell.xib in Resources */,
+				1224CEB416B4F0310070B751 /* battle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +495,7 @@
 				128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */,
 				128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */,
 				1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */,
+				127E984016B4E82900118B79 /* NBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

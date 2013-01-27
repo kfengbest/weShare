@@ -12,6 +12,8 @@
 
 #import "FriendsPanelViewController.h"
 #import "UserPanelViewController.h"
+#import "DataModel/NBook.h"
+#import "BookCell.h"
 
 @interface ViewController ()
 {
@@ -26,13 +28,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _booksList = [[NSMutableArray alloc] initWithObjects:@"kaven",@"feng", nil];
+    _booksList = [[NSMutableArray alloc] init];
     
     //[self testWS];
     
     UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
-    
+//    [self.collectionView registerClass:[BookCell class] forCellWithReuseIdentifier:@"BookCellID"];
+  
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(100, 150)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -112,11 +115,20 @@
     NSString* str =  symbol.data ;
     NSLog(str);
     //[self loadBook:@"1220562"];
-    [self loadBookByIsbn:str];
+    NBook* pBook = [[NBook alloc] init];
+    pBook.imageScaned = [info objectForKey:UIImagePickerControllerOriginalImage];
+    pBook.isbn = str;
+  //  [self loadBook: pBook];
+    
+    [_booksList addObject:pBook];
+    
+    [self.collectionView reloadData];
 }
 
-- (void) loadBookByIsbn:(NSString*) isbn
+- (void) loadBook:(NBook*)book
 {
+    NSString* isbn = book.isbn;
+    
     static NSString* s_DoubanAPI = @"https://api.douban.com/v2/book/isbn/";
     NSString* bookAPI = [s_DoubanAPI stringByAppendingString:isbn];    
     
@@ -129,6 +141,8 @@
     
  //   NSLog(@"result: %@", resultDic);
     NSString* midImgURL = [resultDic objectForKey:@"image"];
+    book.imageUrl = midImgURL;
+    
     
 //    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:midImgURL]]];
 //    UIImageView* bookImageView = [[UIImageView alloc] initWithImage:bookImage];
@@ -136,10 +150,12 @@
 //    [self.view addSubview:bookImageView];
 
     
-    EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"Default.png"]];
-    imageView.frame = CGRectMake(10, 10, 80, 100);
-    imageView.imageURL = [NSURL URLWithString:midImgURL];
-    [self.view addSubview:imageView];
+//    EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"Default.png"]];
+//    imageView.frame = CGRectMake(10, 10, 80, 100);
+//    imageView.imageURL = [NSURL URLWithString:midImgURL];
+//   // [self.view addSubview:imageView];
+//    book.imageDownloaded = imageView.image;
+    
 }
 
 -(void) testWS
@@ -188,16 +204,24 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 20;
+    return [_booksList count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
+    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
+    
+    int n = (int)indexPath.row;
+    NBook* pBook = (NBook*)[_booksList objectAtIndex:n];
+    
+//    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
+//
+    
+   // cell.imageView.image = [UIImage imageNamed:@"battle.png"];
+
     return cell;
     
     
-    return cell;
 }
 
 @end

@@ -10,6 +10,8 @@
 #import "../ZBarSDK/Headers/ZBarSDK/ZBarSDK.h"
 #import "../SideBar/SideBarViewController.h"
 
+@class NBook;
+
 @interface ViewController : SideBarViewController<ZBarReaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     
@@ -19,6 +21,6 @@
 
 - (IBAction)onScan:(id)sender;
 
-- (void) loadBookByIsbn:(NSString*) isbn;
+- (void) loadBook:(NBook*)book;
 
 @end
