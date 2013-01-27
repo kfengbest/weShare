@@ -118,7 +118,7 @@
     NBook* pBook = [[NBook alloc] init];
     pBook.imageScaned = [info objectForKey:UIImagePickerControllerOriginalImage];
     pBook.isbn = str;
-  //  [self loadBook: pBook];
+    [self loadBook: pBook];
     
     [_booksList addObject:pBook];
     
@@ -218,15 +218,15 @@
 
     UIImageView* iv = (UIImageView*)[cell viewWithTag:1];
     
-  //  UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
-   // iv.image = bookImage;  // network image
+    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
+    iv.image = bookImage;  // network image
    // iv.image = pBook.imageScaned;
     
-    if (pBook.imageDownloaded != nil) {
-        iv.image = pBook.imageDownloaded;
-    }else{
-        iv.image = pBook.imageScaned;
-    }
+//    if (pBook.imageDownloaded != nil) {
+//        iv.image = pBook.imageDownloaded;
+//    }else{
+//        iv.image = pBook.imageScaned;
+//    }
     
     return cell;
     
