@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1210763E16B4CB3B0076AF3B /* BookCell.m */; };
+		1210764216B4D3890076AF3B /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1210764116B4D3890076AF3B /* BookCell.xib */; };
 		1270B58116B15566003A884A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58016B15566003A884A /* UIKit.framework */; };
 		1270B58316B15566003A884A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58216B15566003A884A /* Foundation.framework */; };
 		1270B58516B15566003A884A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270B58416B15566003A884A /* CoreGraphics.framework */; };
@@ -52,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1210763D16B4CB3B0076AF3B /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
+		1210763E16B4CB3B0076AF3B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
+		1210764116B4D3890076AF3B /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		1270B57C16B15566003A884A /* weShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270B58016B15566003A884A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1270B58216B15566003A884A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -210,6 +215,9 @@
 				12BEAE1616B3CF2800D27223 /* UserPanelViewController.h */,
 				12BEAE1716B3CF2800D27223 /* UserPanelViewController.mm */,
 				12BEAE1816B3CF2800D27223 /* UserPanelViewController.xib */,
+				1210763D16B4CB3B0076AF3B /* BookCell.h */,
+				1210763E16B4CB3B0076AF3B /* BookCell.m */,
+				1210764116B4D3890076AF3B /* BookCell.xib */,
 				128EFA1B16B4203D00CEAD07 /* StringConvert.h */,
 			);
 			path = weShare;
@@ -449,6 +457,7 @@
 				12CB15DC16B18B9E00B3BA9A /* README.mdown in Resources */,
 				12BEAE1516B3CEA700D27223 /* FriendsPanelViewController.xib in Resources */,
 				12BEAE1A16B3CF2800D27223 /* UserPanelViewController.xib in Resources */,
+				1210764216B4D3890076AF3B /* BookCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +485,7 @@
 				128EFA1116B4190B00CEAD07 /* User.cpp in Sources */,
 				128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */,
 				128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */,
+				1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

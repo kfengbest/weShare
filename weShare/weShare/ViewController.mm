@@ -29,6 +29,15 @@
     _booksList = [[NSMutableArray alloc] initWithObjects:@"kaven",@"feng", nil];
     
     //[self testWS];
+    
+    UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:CGSizeMake(100, 150)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.collectionView setCollectionViewLayout:flowLayout];
 }
 
 -(UIViewController*) createLeftSideBarController
@@ -171,6 +180,24 @@
     
     
     
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return 20;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
+    return cell;
+    
+    
+    return cell;
 }
 
 @end
