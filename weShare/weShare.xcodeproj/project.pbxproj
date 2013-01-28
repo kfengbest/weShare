@@ -53,6 +53,7 @@
 		12CB15DE16B18B9E00B3BA9A /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D516B18B9E00B3BA9A /* EGOImageLoadConnection.m */; };
 		12CB15DF16B18B9E00B3BA9A /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D716B18B9E00B3BA9A /* EGOImageLoader.m */; };
 		12CB15E016B18B9E00B3BA9A /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15DA16B18B9E00B3BA9A /* EGOImageView.m */; };
+		12E686DA16B69F4E00B81B8C /* NUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E686D916B69F4E00B81B8C /* NUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,8 @@
 		12CB15D716B18B9E00B3BA9A /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
 		12CB15D916B18B9E00B3BA9A /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
 		12CB15DA16B18B9E00B3BA9A /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		12E686D816B69F4E00B81B8C /* NUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUser.h; path = DataModel/NUser.h; sourceTree = "<group>"; };
+		12E686D916B69F4E00B81B8C /* NUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUser.m; path = DataModel/NUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +327,8 @@
 		128EFA0D16B418EB00CEAD07 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				12E686D816B69F4E00B81B8C /* NUser.h */,
+				12E686D916B69F4E00B81B8C /* NUser.m */,
 				128EFA1816B4194F00CEAD07 /* Friend.cpp */,
 				128EFA1916B4194F00CEAD07 /* Friend.h */,
 				128EFA0F16B4190B00CEAD07 /* User.cpp */,
@@ -498,6 +503,7 @@
 				128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */,
 				1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */,
 				127E984016B4E82900118B79 /* NBook.m in Sources */,
+				12E686DA16B69F4E00B81B8C /* NUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

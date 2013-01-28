@@ -12,12 +12,13 @@
 #import "StringConvert.h"
 #import "ConstStrings.h"
 #import "../JSONKit/JSONKit.h"
-
+#import "DataModel/NUser.h"
 
 @interface FriendsPanelViewController ()
 {
     NSString* _sessionID;
     std::vector<Friend*> _friendsVec;
+    NSMutableArray* _friendsList;
 }
 
 @end
@@ -49,6 +50,8 @@
     _friendsVec.push_back(f1);
     _friendsVec.push_back(f2);
 
+    
+    _friendsList = [[NSMutableArray alloc] init];
     [self loadSession];
     [self loadUsers];
     
@@ -68,14 +71,25 @@
 
 -(void) loadUsers
 {
-    NSString *strGetUserInfo = [NSString stringWithFormat:@"%@%@%@%@%@",s_strApi,s_strOp, s_GetUserInfoBySession,s_strSessionParm, _sessionID];
-    NSURL* urlGetUser = [NSURL URLWithString:strGetUserInfo];
-    NSURLRequest* reqGetUser = [NSURLRequest requestWithURL:urlGetUser];
+    NSString *strGetFriendsInfo = [NSString stringWithFormat:@"%@%@%@%@%@",s_strApi,s_strOp, s_GetFriendsBySession,s_strSessionParm, _sessionID];
+    NSURL* urlGetFriends = [NSURL URLWithString:strGetFriendsInfo];
+    NSURLRequest* reqGetFriends = [NSURLRequest requestWithURL:urlGetFriends];
     NSError* err2 = nil;
-    NSURLResponse* resGetUser = nil;
-    NSData* userData = [NSURLConnection sendSynchronousRequest:reqGetUser returningResponse:&resGetUser error:&err2];
-    NSDictionary* userDic = [userData objectFromJSONData];
-    NSLog(@"user: %@", userDic);
+    NSURLResponse* resGetFriends = nil;
+    NSData* friendsData = [NSURLConnection sendSynchronousRequest:reqGetFriends returningResponse:&resGetFriends error:&err2];
+ //   NSDictionary* friendsDictionary = [friendsData objectFromJSONData];
+ //   NSArray* arrValues = [friendsDictionary allValues];
+    
+    NSArray* arrValues = [friendsData objectFromJSONData];
+
+    for (NSDictionary *friendsDic in arrValues)
+    {
+        NUser* pFriend = [[NUser alloc] init];
+        [_friendsList addObject:pFriend];
+        pFriend.userId = (NSInteger)[friendsDic objectForKey:@"id"];
+        pFriend.name = (NSString*)[friendsDic objectForKey:@"nickname"];
+    }
+
 
 }
 
@@ -89,7 +103,7 @@
 // TableView.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _friendsVec.size();
+    return [_friendsList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,8 +117,9 @@
     }
         
     int n = (int)indexPath.row;
-    std::wstring wStr = _friendsVec.at(n)->name();
-    cell.textLabel.text = [NSString stringWithwstring:wStr];
+    //std::wstring wStr = _friendsVec.at(n)->name();
+    NUser* pUser = [_friendsList objectAtIndex:n];
+    cell.textLabel.text = pUser.name;
     
     return cell;
 }

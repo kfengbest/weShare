@@ -17,6 +17,7 @@ static NSString* s_strSessionParm = @"&sessionid=";
 
 static NSString* s_GetUserInfoBySession = @"GetUserInfoBySession";
 static NSString* s_GetBooksBySession = @"GetBooksBySession";
+static NSString* s_GetFriendsBySession = @"GetFriendsBySession";
 
 static NSString* s_loginUrl = @"http://services.sketchbook.cn/openlib/service_test/api.php?op=Login&email=tom.dong@openlib.com&localpwd=c01abe74c44be79ce0bec6f042353064";
 
