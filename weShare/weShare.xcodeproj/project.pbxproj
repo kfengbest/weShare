@@ -60,6 +60,7 @@
 		1210763E16B4CB3B0076AF3B /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		1210764116B4D3890076AF3B /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		1224CEB316B4F0310070B751 /* battle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battle.png; sourceTree = "<group>"; };
+		1224CEB616B4FDC90070B751 /* ConstStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstStrings.h; sourceTree = "<group>"; };
 		1270B57C16B15566003A884A /* weShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270B58016B15566003A884A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1270B58216B15566003A884A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -224,6 +225,7 @@
 				1210763E16B4CB3B0076AF3B /* BookCell.m */,
 				1210764116B4D3890076AF3B /* BookCell.xib */,
 				128EFA1B16B4203D00CEAD07 /* StringConvert.h */,
+				1224CEB616B4FDC90070B751 /* ConstStrings.h */,
 			);
 			path = weShare;
 			sourceTree = "<group>";
