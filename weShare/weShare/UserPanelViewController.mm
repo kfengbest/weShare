@@ -7,6 +7,9 @@
 //
 
 #import "UserPanelViewController.h"
+#import "../DBLayer/connectionsqlite.h"
+#import "../DBLayer/dbrecordbuffer.h"
+#import "../DBLayer/dbfield.h"
 
 @interface UserPanelViewController ()
 
@@ -27,6 +30,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    std::string sql = "select * from Users;";
+    std::vector<DbRecordBuffer*> pRecords;
+    ConnectionSqlite::get()->ExecuteSql(sql,pRecords);
+    int n = pRecords.size();
+    for (int i = 0; i < n; i++) {
+        DbRecordBuffer* pBuffer = pRecords.at(i);
+        int nf = pBuffer->count();
+        
+    }
+    
+//    std::string sqlInsert = "insert into Users values(100,'amy','email');";
+//    ConnectionSqlite::get()->ExecuteSql(sqlInsert);
+
+//    std::string sqlDel = "delete from Users where aimkey = 3";
+//    ConnectionSqlite::get()->ExecuteSql(sqlDel);
+
+
+    
 }
 
 - (void)didReceiveMemoryWarning

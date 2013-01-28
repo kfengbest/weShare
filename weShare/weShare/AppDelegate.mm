@@ -7,11 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "../DBLayer/connectionsqlite.h"
+#import "StringConvert.h"
 
 @implementation AppDelegate
 
 - (void)dealloc
 {
+    
     [_window release];
     [super dealloc];
 }
@@ -19,6 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString *fileAddress = [[NSBundle mainBundle] pathForResource:@"weshare" ofType:@"db"];
+    ConnectionSqlite::get()->ConnectToDatabase([fileAddress getstring]);
+    
     return YES;
 }
 							
