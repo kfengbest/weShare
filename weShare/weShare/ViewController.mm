@@ -188,8 +188,6 @@
     NSDictionary* booksDic = [booksData objectFromJSONData];
     NSLog(@"books: %@", booksDic);
     
-    
-    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
