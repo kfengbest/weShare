@@ -12,11 +12,16 @@
 #import "ConstStrings.h"
 #import "../JSONKit/JSONKit.h"
 #import "DataModel/NUser.h"
+#import "BooksViewController.h"
+#import "../SideBar/SideBarSelectedDelegate.h"
 
 @interface FriendsPanelViewController ()
 {
     NSString* _sessionID;
     NSMutableArray* _friendsList;
+    
+    int _selectIdnex;
+
 }
 
 @end
@@ -38,11 +43,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
         
-
     
     _friendsList = [[NSMutableArray alloc] init];
     [self loadSession];
     [self loadUsers];
+    
+    if ([self.delegate respondsToSelector:@selector(rightSideBarSelectWithController:)]) {
+        [self.delegate rightSideBarSelectWithController :[self subConWithIndex:0]];
+        _selectIdnex = 0;
+    }
     
 }
 
@@ -75,8 +84,10 @@
     {
         NUser* pFriend = [[NUser alloc] init];
         [_friendsList addObject:pFriend];
-        pFriend.userId = (NSInteger)[friendsDic objectForKey:@"id"];
+        NSString* strId = (NSString*)[friendsDic objectForKey:@"id"];
+        pFriend.userId =  [strId intValue];
         pFriend.name = (NSString*)[friendsDic objectForKey:@"nickname"];
+        pFriend.sessionId = _sessionID;
     }
 
 
@@ -114,8 +125,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if ([self.delegate respondsToSelector:@selector(rightSideBarSelectWithController:)]) {
+        if (indexPath.row == _selectIdnex) {
+            [self.delegate rightSideBarSelectWithController:nil];
+        }else
+        {
+            NSLog(@"selected %d", indexPath.row);
+            [self.delegate rightSideBarSelectWithController:[self subConWithIndex:indexPath.row]];
+        }
+        
+    }
+    _selectIdnex = indexPath.row;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+- (UINavigationController *)subConWithIndex:(int)index
+{
+    BooksViewController *con = [[BooksViewController alloc] initWithNibName:@"BooksViewController" bundle:nil];
+    con.user = [_friendsList objectAtIndex:index];
+    [con reload];
+    
+    UINavigationController *nav= [[UINavigationController alloc] initWithRootViewController:con];
+    nav.navigationBar.hidden = YES;
+    return nav ;
+}
 @end

@@ -21,6 +21,8 @@
 
 @interface ViewController ()
 {
+    UIViewController  *_currentMainController;
+
     NSString* _sessionID;
     NSMutableArray* _booksList;
 }
@@ -35,19 +37,17 @@
     
     _booksList = [[NSMutableArray alloc] init];
     
-    UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
-    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
-//    [self.collectionView registerClass:[BookCell class] forCellWithReuseIdentifier:@"BookCellID"];
-  
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(100, 150)];
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.collectionView setCollectionViewLayout:flowLayout];
+//    UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
+//    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];  
+//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+//    [flowLayout setItemSize:CGSizeMake(100, 150)];
+//    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//    [self.collectionView setCollectionViewLayout:flowLayout];
     
 //  [self testWS];
-    [self loadSession];
-    [self loadBooksByUser:nil];
+//    [self loadSession];
+//    [self loadBooksByUser:nil];
 }
 
 -(LeftSideBarViewController*) createLeftSideBarController
@@ -66,6 +66,45 @@
     }
     
     return self.rightSideBarViewController;
+}
+
+- (void)leftSideBarSelectWithController:(UIViewController *)controller
+{
+
+}
+
+
+- (void)rightSideBarSelectWithController:(UIViewController *)controller
+{
+    if ([controller isKindOfClass:[UINavigationController class]]) {
+        [(UINavigationController *)controller setDelegate:self];
+    }
+    if (_currentMainController == nil) {
+		controller.view.frame = self.contentView.bounds;
+		_currentMainController = controller;
+		[self addChildViewController:_currentMainController];
+		[self.contentView addSubview:_currentMainController.view];
+		[_currentMainController didMoveToParentViewController:self];
+	} else if (_currentMainController != controller && controller !=nil) {
+		controller.view.frame = self.contentView.bounds;
+		[_currentMainController willMoveToParentViewController:nil];
+		[self addChildViewController:controller];
+		self.view.userInteractionEnabled = NO;
+		[self transitionFromViewController:_currentMainController
+						  toViewController:controller
+								  duration:0
+								   options:UIViewAnimationOptionTransitionNone
+								animations:^{}
+								completion:^(BOOL finished){
+									self.view.userInteractionEnabled = YES;
+									[_currentMainController removeFromParentViewController];
+									[controller didMoveToParentViewController:self];
+									_currentMainController = controller;
+								}
+         ];
+	}
+    
+    [self showSideBarControllerWithDirection:SideBarShowDirectionNone];
 }
 
 
@@ -226,38 +265,38 @@
     
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    return [_booksList count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
-    
-    int n = (int)indexPath.row;
-    NBook* pBook = (NBook*)[_booksList objectAtIndex:n];
-    
-
-
-    UIImageView* iv = (UIImageView*)[cell viewWithTag:1];
-    
-    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
-    iv.image = bookImage;  // network image
-   // iv.image = pBook.imageScaned;
-    
-//    if (pBook.imageDownloaded != nil) {
-//        iv.image = pBook.imageDownloaded;
-//    }else{
-//        iv.image = pBook.imageScaned;
-//    }
-    
-    return cell;
-    
-}
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return 1;
+//}
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    
+//    return [_booksList count];
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
+//    
+//    int n = (int)indexPath.row;
+//    NBook* pBook = (NBook*)[_booksList objectAtIndex:n];
+//    
+//
+//
+//    UIImageView* iv = (UIImageView*)[cell viewWithTag:1];
+//    
+//    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
+//    iv.image = bookImage;  // network image
+//   // iv.image = pBook.imageScaned;
+//    
+////    if (pBook.imageDownloaded != nil) {
+////        iv.image = pBook.imageDownloaded;
+////    }else{
+////        iv.image = pBook.imageScaned;
+////    }
+//    
+//    return cell;
+//    
+//}
 
 @end

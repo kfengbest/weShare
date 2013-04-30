@@ -50,6 +50,8 @@
 		12CB15DE16B18B9E00B3BA9A /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D516B18B9E00B3BA9A /* EGOImageLoadConnection.m */; };
 		12CB15DF16B18B9E00B3BA9A /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15D716B18B9E00B3BA9A /* EGOImageLoader.m */; };
 		12CB15E016B18B9E00B3BA9A /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CB15DA16B18B9E00B3BA9A /* EGOImageView.m */; };
+		12DF91F91730067500DA224B /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DF91F71730067500DA224B /* BooksViewController.m */; };
+		12DF91FA1730067500DA224B /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DF91F81730067500DA224B /* BooksViewController.xib */; };
 		12E686DA16B69F4E00B81B8C /* NUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E686D916B69F4E00B81B8C /* NUser.m */; };
 		12E686E816B6C71E00B81B8C /* connectionbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E686E016B6C71E00B81B8C /* connectionbase.cpp */; };
 		12E686E916B6C71E00B81B8C /* connectionsqlite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E686E216B6C71E00B81B8C /* connectionsqlite.cpp */; };
@@ -144,6 +146,9 @@
 		12CB15D716B18B9E00B3BA9A /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
 		12CB15D916B18B9E00B3BA9A /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
 		12CB15DA16B18B9E00B3BA9A /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		12DF91F61730067500DA224B /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
+		12DF91F71730067500DA224B /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
+		12DF91F81730067500DA224B /* BooksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		12E686D816B69F4E00B81B8C /* NUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUser.h; path = DataModel/NUser.h; sourceTree = "<group>"; };
 		12E686D916B69F4E00B81B8C /* NUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUser.m; path = DataModel/NUser.m; sourceTree = "<group>"; };
 		12E686E016B6C71E00B81B8C /* connectionbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connectionbase.cpp; sourceTree = "<group>"; };
@@ -239,6 +244,9 @@
 				1210764116B4D3890076AF3B /* BookCell.xib */,
 				128EFA1B16B4203D00CEAD07 /* StringConvert.h */,
 				1224CEB616B4FDC90070B751 /* ConstStrings.h */,
+				12DF91F61730067500DA224B /* BooksViewController.h */,
+				12DF91F71730067500DA224B /* BooksViewController.m */,
+				12DF91F81730067500DA224B /* BooksViewController.xib */,
 			);
 			path = weShare;
 			sourceTree = "<group>";
@@ -495,6 +503,7 @@
 				1210764216B4D3890076AF3B /* BookCell.xib in Resources */,
 				1224CEB416B4F0310070B751 /* battle.png in Resources */,
 				12E686EF16B6CAA100B81B8C /* weshare.db in Resources */,
+				12DF91FA1730067500DA224B /* BooksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +535,7 @@
 				12E686E916B6C71E00B81B8C /* connectionsqlite.cpp in Sources */,
 				12E686EA16B6C71E00B81B8C /* dbfield.cpp in Sources */,
 				12E686EB16B6C71E00B81B8C /* dbrecordbuffer.cpp in Sources */,
+				12DF91F91730067500DA224B /* BooksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

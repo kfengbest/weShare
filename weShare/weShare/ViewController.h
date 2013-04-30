@@ -12,7 +12,9 @@
 
 @class NBook;
 
-@interface ViewController : SideBarViewController<ZBarReaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+//@interface ViewController : SideBarViewController<ZBarReaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate,UINavigationControllerDelegate>
+@interface ViewController : SideBarViewController<ZBarReaderDelegate,UINavigationControllerDelegate>
+
 {
     
 }

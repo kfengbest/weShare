@@ -17,5 +17,6 @@
 @property(strong, nonatomic) NSString* name;
 @property(strong, nonatomic) NSString* email;
 @property(strong, nonatomic) NSString* urlPhoto;
+@property(strong, nonatomic) NSString* sessionId;
 
 @end
