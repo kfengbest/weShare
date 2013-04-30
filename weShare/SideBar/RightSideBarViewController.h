@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SideBarSelectDelegate ;
+
 @interface RightSideBarViewController : UIViewController
+{
+    
+}
+
+@property (assign,nonatomic)id<SideBarSelectDelegate>delegate;
 
 @end

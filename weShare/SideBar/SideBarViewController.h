@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SideBarSelectedDelegate.h""
+#import "LeftSideBarViewController.h"
+#import "RightSideBarViewController.h"
 
 @interface SideBarViewController : UIViewController<SideBarSelectedDelegate>
 {
@@ -16,10 +18,10 @@
 
 @property(strong, nonatomic) IBOutlet UIView* contentView;
 @property(strong, nonatomic) IBOutlet UIView* navBackView;
-@property(strong, nonatomic) UIViewController* leftSideBarViewController;
-@property(strong, nonatomic) UIViewController* rightSideBarViewController;
+@property(strong, nonatomic) LeftSideBarViewController* leftSideBarViewController;
+@property(strong, nonatomic) RightSideBarViewController* rightSideBarViewController;
 
--(UIViewController*) createLeftSideBarController;
--(UIViewController*) createRightSideBarController;
+-(LeftSideBarViewController*) createLeftSideBarController;
+-(RightSideBarViewController*) createRightSideBarController;
 
 @end

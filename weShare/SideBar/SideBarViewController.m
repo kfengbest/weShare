@@ -60,9 +60,9 @@ const float MoveAnimationDuration = 0.3;
     
     // create left/right viewcontroller and added them as child controller;
     self.leftSideBarViewController = [self createLeftSideBarController];
-    //self.leftSideBarViewController.delegate = self;
+    self.leftSideBarViewController.delegate = self;
     self.rightSideBarViewController = [self createRightSideBarController];
-    //self.rightSideBarViewController.delegate = self;
+    self.rightSideBarViewController.delegate = self;
     [self addChildViewController:self.leftSideBarViewController];
     [self addChildViewController:self.rightSideBarViewController];
     self.leftSideBarViewController.view.frame = self.navBackView.bounds;
@@ -83,19 +83,19 @@ const float MoveAnimationDuration = 0.3;
 }
 
 // must override this method in sub class.
--(UIViewController*) createLeftSideBarController
+-(LeftSideBarViewController*) createLeftSideBarController
 {
     if (self.leftSideBarViewController == nil) {
-        self.leftSideBarViewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+        self.leftSideBarViewController = [[LeftSideBarViewController alloc] initWithNibName:nil bundle:nil];
     }
     
     self.leftSideBarViewController.view.backgroundColor = [UIColor redColor];
     return self.leftSideBarViewController;
 }
--(UIViewController*) createRightSideBarController
+-(RightSideBarViewController*) createRightSideBarController
 {
     if (self.rightSideBarViewController == nil) {
-        self.rightSideBarViewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+        self.rightSideBarViewController = [[RightSideBarViewController alloc] initWithNibName:nil bundle:nil];
     }
     self.rightSideBarViewController.view.backgroundColor = [UIColor greenColor];
     return self.rightSideBarViewController;
