@@ -13,12 +13,15 @@
 #import "FriendsPanelViewController.h"
 #import "UserPanelViewController.h"
 #import "DataModel/NBook.h"
+#import "DataModel/NUser.h"
+
 #import "BookCell.h"
 #import "ConstStrings.h"
 
 
 @interface ViewController ()
 {
+    NSString* _sessionID;
     NSMutableArray* _booksList;
 }
 @end
@@ -32,17 +35,19 @@
     
     _booksList = [[NSMutableArray alloc] init];
     
-    [self testWS];
-    
     UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
 //    [self.collectionView registerClass:[BookCell class] forCellWithReuseIdentifier:@"BookCellID"];
-//  
+  
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(100, 150)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.collectionView setCollectionViewLayout:flowLayout];
+    
+//  [self testWS];
+    [self loadSession];
+    [self loadBooksByUser:nil];
 }
 
 -(UIViewController*) createLeftSideBarController
@@ -187,6 +192,37 @@
     NSData* booksData = [NSURLConnection sendSynchronousRequest:reqGetBooks returningResponse:&resBooks error:&err3];
     NSDictionary* booksDic = [booksData objectFromJSONData];
     NSLog(@"books: %@", booksDic);
+    
+}
+
+-(void) loadSession{
+    NSURL* url1 = [NSURL URLWithString:s_loginUrl];
+    NSURLRequest* req = [NSURLRequest requestWithURL:url1];
+    NSError* err = nil;
+    NSURLResponse* response = nil;
+    NSData* resData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&err];
+    _sessionID = [[NSString alloc] initWithData:resData encoding:NSUTF8StringEncoding];
+    //NSLog(@"Session: %@", _sessionID);
+}
+
+-(void) loadBooksByUser : (NUser*) user{
+    NSString* strGetBooks = [NSString stringWithFormat:@"%@%@%@%@%@", s_strApi, s_strOp, s_GetBooksBySession, s_strSessionParm, _sessionID];
+    NSURL* urlGetBooks = [NSURL URLWithString:strGetBooks];
+    NSURLRequest* reqGetBooks = [NSURLRequest requestWithURL:urlGetBooks];
+    NSURLResponse* resBooks = nil;
+    NSError* err3 = nil;
+    NSData* booksData = [NSURLConnection sendSynchronousRequest:reqGetBooks returningResponse:&resBooks error:&err3];
+    
+    NSArray* arrValues = [booksData objectFromJSONData];
+    for (NSDictionary *bookDic in arrValues)
+    {
+        NBook* pBook = [[NBook alloc] init];
+        pBook.isbn = (NSString*)[bookDic objectForKey:@"isbn"];
+        [self loadBook: pBook];
+        [_booksList addObject:pBook];
+    }
+    
+    [self.collectionView reloadData];
     
 }
 

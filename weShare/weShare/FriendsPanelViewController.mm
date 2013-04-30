@@ -67,10 +67,10 @@
     NSURLResponse* resGetFriends = nil;
     NSData* friendsData = [NSURLConnection sendSynchronousRequest:reqGetFriends returningResponse:&resGetFriends error:&err2];
  //   NSDictionary* friendsDictionary = [friendsData objectFromJSONData];
+ //   NSLog(@"friendsDictionary: %@", friendsDictionary);
  //   NSArray* arrValues = [friendsDictionary allValues];
     
     NSArray* arrValues = [friendsData objectFromJSONData];
-
     for (NSDictionary *friendsDic in arrValues)
     {
         NUser* pFriend = [[NUser alloc] init];
