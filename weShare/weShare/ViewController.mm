@@ -32,7 +32,7 @@
     
     _booksList = [[NSMutableArray alloc] init];
     
- //   [self testWS];
+    [self testWS];
     
     UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];

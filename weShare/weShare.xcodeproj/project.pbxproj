@@ -37,9 +37,6 @@
 		1270B5FB16B172F8003A884A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270B5F816B172F8003A884A /* JSONKit.m */; };
 		1270B5FC16B172F8003A884A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1270B5F916B172F8003A884A /* README.md */; };
 		127E984016B4E82900118B79 /* NBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E983F16B4E82900118B79 /* NBook.m */; };
-		128EFA1116B4190B00CEAD07 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA0F16B4190B00CEAD07 /* User.cpp */; };
-		128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1216B4191F00CEAD07 /* Book.cpp */; };
-		128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128EFA1816B4194F00CEAD07 /* Friend.cpp */; };
 		12BC4DCE16B25F08000DA40B /* SideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DCC16B25F08000DA40B /* SideBarViewController.m */; };
 		12BC4DD316B25F63000DA40B /* LeftSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD116B25F63000DA40B /* LeftSideBarViewController.m */; };
 		12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC4DD616B25F74000DA40B /* RightSideBarViewController.m */; };
@@ -122,12 +119,6 @@
 		1270B5F916B172F8003A884A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		127E983E16B4E82900118B79 /* NBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NBook.h; path = DataModel/NBook.h; sourceTree = "<group>"; };
 		127E983F16B4E82900118B79 /* NBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NBook.m; path = DataModel/NBook.m; sourceTree = "<group>"; };
-		128EFA0F16B4190B00CEAD07 /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = DataModel/User.cpp; sourceTree = "<group>"; };
-		128EFA1016B4190B00CEAD07 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = DataModel/User.h; sourceTree = "<group>"; };
-		128EFA1216B4191F00CEAD07 /* Book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Book.cpp; path = DataModel/Book.cpp; sourceTree = "<group>"; };
-		128EFA1316B4191F00CEAD07 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = DataModel/Book.h; sourceTree = "<group>"; };
-		128EFA1816B4194F00CEAD07 /* Friend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Friend.cpp; path = DataModel/Friend.cpp; sourceTree = "<group>"; };
-		128EFA1916B4194F00CEAD07 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = DataModel/Friend.h; sourceTree = "<group>"; };
 		128EFA1B16B4203D00CEAD07 /* StringConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConvert.h; sourceTree = "<group>"; };
 		12BC4DCB16B25F08000DA40B /* SideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarViewController.h; sourceTree = "<group>"; };
 		12BC4DCC16B25F08000DA40B /* SideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarViewController.m; sourceTree = "<group>"; };
@@ -349,12 +340,6 @@
 			children = (
 				12E686D816B69F4E00B81B8C /* NUser.h */,
 				12E686D916B69F4E00B81B8C /* NUser.m */,
-				128EFA1816B4194F00CEAD07 /* Friend.cpp */,
-				128EFA1916B4194F00CEAD07 /* Friend.h */,
-				128EFA0F16B4190B00CEAD07 /* User.cpp */,
-				128EFA1016B4190B00CEAD07 /* User.h */,
-				128EFA1216B4191F00CEAD07 /* Book.cpp */,
-				128EFA1316B4191F00CEAD07 /* Book.h */,
 				127E983E16B4E82900118B79 /* NBook.h */,
 				127E983F16B4E82900118B79 /* NBook.m */,
 			);
@@ -534,9 +519,6 @@
 				12BC4DD816B25F74000DA40B /* RightSideBarViewController.m in Sources */,
 				12BEAE1416B3CEA700D27223 /* FriendsPanelViewController.mm in Sources */,
 				12BEAE1916B3CF2800D27223 /* UserPanelViewController.mm in Sources */,
-				128EFA1116B4190B00CEAD07 /* User.cpp in Sources */,
-				128EFA1416B4191F00CEAD07 /* Book.cpp in Sources */,
-				128EFA1A16B4194F00CEAD07 /* Friend.cpp in Sources */,
 				1210763F16B4CB3B0076AF3B /* BookCell.m in Sources */,
 				127E984016B4E82900118B79 /* NBook.m in Sources */,
 				12E686DA16B69F4E00B81B8C /* NUser.m in Sources */,

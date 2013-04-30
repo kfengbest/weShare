@@ -7,7 +7,6 @@
 //
 
 #import "FriendsPanelViewController.h"
-#import "DataModel/Friend.h"
 #import <vector>
 #import "StringConvert.h"
 #import "ConstStrings.h"
@@ -17,7 +16,6 @@
 @interface FriendsPanelViewController ()
 {
     NSString* _sessionID;
-    std::vector<Friend*> _friendsVec;
     NSMutableArray* _friendsList;
 }
 
@@ -40,15 +38,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
         
-    
-    Friend* f1 = new Friend();
-    f1->name(L"凯");
-    
-    Friend* f2 = new Friend();
-    f2->name(L"Feng");
-    
-    _friendsVec.push_back(f1);
-    _friendsVec.push_back(f2);
 
     
     _friendsList = [[NSMutableArray alloc] init];
@@ -117,7 +106,6 @@
     }
         
     int n = (int)indexPath.row;
-    //std::wstring wStr = _friendsVec.at(n)->name();
     NUser* pUser = [_friendsList objectAtIndex:n];
     cell.textLabel.text = pUser.name;
     
