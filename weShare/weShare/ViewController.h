@@ -12,14 +12,11 @@
 
 @class NBook;
 
-//@interface ViewController : SideBarViewController<ZBarReaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate,UINavigationControllerDelegate>
 @interface ViewController : SideBarViewController<ZBarReaderDelegate,UINavigationControllerDelegate>
 
 {
     
 }
-
-@property(strong, nonatomic) IBOutlet UICollectionView* collectionView;
 
 - (IBAction)onScan:(id)sender;
 

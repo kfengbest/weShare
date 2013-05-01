@@ -22,9 +22,6 @@
 @interface ViewController ()
 {
     UIViewController  *_currentMainController;
-
-    NSString* _sessionID;
-    NSMutableArray* _booksList;
 }
 @end
 
@@ -34,20 +31,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    _booksList = [[NSMutableArray alloc] init];
-    
-//    UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
-//    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];  
-//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    [flowLayout setItemSize:CGSizeMake(100, 150)];
-//    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//    [self.collectionView setCollectionViewLayout:flowLayout];
-    
-//  [self testWS];
-//    [self loadSession];
-//    [self loadBooksByUser:nil];
 }
 
 -(LeftSideBarViewController*) createLeftSideBarController
@@ -166,9 +149,8 @@
     pBook.isbn = str;
     [self loadBook: pBook];
     
-    [_booksList addObject:pBook];
+   // [_booksList addObject:pBook];
     
-    [self.collectionView reloadData];
 }
 
 - (void) loadBook:(NBook*)book
@@ -234,69 +216,5 @@
     
 }
 
--(void) loadSession{
-    NSURL* url1 = [NSURL URLWithString:s_loginUrl];
-    NSURLRequest* req = [NSURLRequest requestWithURL:url1];
-    NSError* err = nil;
-    NSURLResponse* response = nil;
-    NSData* resData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&err];
-    _sessionID = [[NSString alloc] initWithData:resData encoding:NSUTF8StringEncoding];
-    //NSLog(@"Session: %@", _sessionID);
-}
-
--(void) loadBooksByUser : (NUser*) user{
-    NSString* strGetBooks = [NSString stringWithFormat:@"%@%@%@%@%@", s_strApi, s_strOp, s_GetBooksBySession, s_strSessionParm, _sessionID];
-    NSURL* urlGetBooks = [NSURL URLWithString:strGetBooks];
-    NSURLRequest* reqGetBooks = [NSURLRequest requestWithURL:urlGetBooks];
-    NSURLResponse* resBooks = nil;
-    NSError* err3 = nil;
-    NSData* booksData = [NSURLConnection sendSynchronousRequest:reqGetBooks returningResponse:&resBooks error:&err3];
-    
-    NSArray* arrValues = [booksData objectFromJSONData];
-    for (NSDictionary *bookDic in arrValues)
-    {
-        NBook* pBook = [[NBook alloc] init];
-        pBook.isbn = (NSString*)[bookDic objectForKey:@"isbn"];
-        [self loadBook: pBook];
-        [_booksList addObject:pBook];
-    }
-    
-    [self.collectionView reloadData];
-    
-}
-
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//    return 1;
-//}
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    
-//    return [_booksList count];
-//}
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookCellID" forIndexPath:indexPath];
-//    
-//    int n = (int)indexPath.row;
-//    NBook* pBook = (NBook*)[_booksList objectAtIndex:n];
-//    
-//
-//
-//    UIImageView* iv = (UIImageView*)[cell viewWithTag:1];
-//    
-//    UIImage *bookImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:pBook.imageUrl]]];
-//    iv.image = bookImage;  // network image
-//   // iv.image = pBook.imageScaned;
-//    
-////    if (pBook.imageDownloaded != nil) {
-////        iv.image = pBook.imageDownloaded;
-////    }else{
-////        iv.image = pBook.imageScaned;
-////    }
-//    
-//    return cell;
-//    
-//}
 
 @end
