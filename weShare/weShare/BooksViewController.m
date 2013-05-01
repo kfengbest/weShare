@@ -42,6 +42,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    if (_booksList == nil) {
+        _booksList = [[NSMutableArray alloc] init];
+    }
+    
     UINib* nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"BookCellID"];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -95,6 +99,9 @@
         return;
     }
     
+    if (_booksList == nil) {
+        _booksList = [[NSMutableArray alloc] init];
+    }
     NSString* strGetBooks = [NSString stringWithFormat:@"%@%@%@%@%@%@%d", s_strTestApi, s_strOp, s_GetBooksByOwner, s_strSessionParm, pUser.sessionId, s_strOwnerId, pUser.userId ];
     NSURL* urlGetBooks = [NSURL URLWithString:strGetBooks];
     NSURLRequest* reqGetBooks = [NSURLRequest requestWithURL:urlGetBooks];
@@ -127,7 +134,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 3;//[_booksList count];
+    int i = [_booksList count];
+    return [_booksList count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)pCollectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

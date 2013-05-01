@@ -45,6 +45,7 @@
         
     
     _friendsList = [[NSMutableArray alloc] init];
+    
     [self loadSession];
     [self loadUsers];
     
