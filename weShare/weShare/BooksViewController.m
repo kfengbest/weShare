@@ -16,6 +16,8 @@
 #import "../JSONKit/JSONKit.h"
 #import "../EGOImageLoading/EGOImageView/EGOImageView.h"
 
+#import "BookDetailViewController.h"
+
 @interface BooksViewController ()
 {
     NSMutableArray* _booksList;
@@ -153,4 +155,15 @@
     return cell;
 
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NBook* pBook = [_booksList objectAtIndex:indexPath.row];
+    
+    BookDetailViewController* secondCon = [[BookDetailViewController alloc] initWithNibName:@"BookDetailViewController" bundle:nil];
+    secondCon.book = pBook;
+    [self.navigationController  pushViewController:secondCon animated:YES];
+}
+
 @end
