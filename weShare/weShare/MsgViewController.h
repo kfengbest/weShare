@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) NSMutableArray *messages;
 
+-(void)UpadaPost:(NSString *)strcontext URL:(NSString *)urlstr;
+
 @end

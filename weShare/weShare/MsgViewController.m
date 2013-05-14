@@ -71,6 +71,11 @@
     return [self.messages objectAtIndex:indexPath.row];
 }
 
+
+
+static NSString* s_postURL = @"http://www.gokaven.com/cloud_api/index.php?op=SendMessage&sessionid=2beb248c-9208-b5fd-12df-a02d5878574b&replyid=5&friendid=2&isbn=9787564101657";
+
+
 - (void)sendPressed:(UIButton *)sender withText:(NSString *)text
 {
     [self.messages addObject:text];
@@ -80,6 +85,8 @@
     else
         [MessageSoundEffect playMessageReceivedSound];
     
+    [self UpadaPost:text URL:s_postURL];
+    
     [self finishSend];
 }
 
@@ -87,4 +94,32 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+-(void)UpadaPost:(NSString *)strcontext URL:(NSString *)urlstr{
+    
+    NSLog(urlstr);
+    NSLog(strcontext);
+    assert(strcontext != NULL);
+    assert(urlstr != NULL);
+    
+    NSData *postData = [strcontext dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:urlstr]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLResponse *respone;
+    NSError *err;
+    NSData *myReturn =[NSURLConnection sendSynchronousRequest:request returningResponse:&respone
+                                                        error:err];
+    
+    NSLog(@"%@", [[NSString alloc] initWithData:myReturn encoding:NSUTF8StringEncoding]);
+}
+
 @end
