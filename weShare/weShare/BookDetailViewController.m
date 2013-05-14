@@ -8,6 +8,7 @@
 
 #import "BookDetailViewController.h"
 #import "./DataModel/NBook.h"
+#import "MsgViewController.h"
 
 @interface BookDetailViewController ()
 {
@@ -54,5 +55,15 @@
 - (IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)onSendMsg:(id)sender {
+    
+    MsgViewController* msgCon = [[MsgViewController alloc] initWithNibName:@"MsgViewController" bundle:nil];
+    [self.navigationController  pushViewController:msgCon animated:YES];
+    
+//    MsgViewController* msgCon = [[MsgViewController alloc] initWithNibName:@"MsgViewController" bundle:nil];
+//    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:msgCon];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 @end

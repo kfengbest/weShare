@@ -52,8 +52,8 @@
 - (void)setup
 {
     CGSize size = self.view.frame.size;
-	
-    CGRect tableFrame = CGRectMake(0.0f, 0.0f, size.width, size.height - INPUT_HEIGHT);
+    
+    CGRect tableFrame = CGRectMake(0.0f, 44.0f*2, size.width, size.height - INPUT_HEIGHT - 44);
 	self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
 	self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	self.tableView.dataSource = self;
@@ -63,7 +63,7 @@
     UIColor *color = [UIColor colorWithRed:0.859f green:0.886f blue:0.929f alpha:1.0f];
     [self setBackgroundColor:color];
     
-    CGRect inputFrame = CGRectMake(0.0f, size.height - INPUT_HEIGHT, size.width, INPUT_HEIGHT);
+    CGRect inputFrame = CGRectMake(0.0f, size.height - INPUT_HEIGHT*2, size.width, INPUT_HEIGHT);
     self.inputView = [[MessageInputView alloc] initWithFrame:inputFrame];
     self.inputView.textView.delegate = self;
     [self.inputView.sendButton addTarget:self action:@selector(sendPressed:) forControlEvents:UIControlEventTouchUpInside];

@@ -80,6 +80,8 @@
 		12E31E2C1741F4E5008FA64C /* messageSent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 12E31E121741F4E5008FA64C /* messageSent.aiff */; };
 		12E31E2D1741F4E5008FA64C /* UIView+AnimationOptionsForCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E31E141741F4E5008FA64C /* UIView+AnimationOptionsForCurve.m */; };
 		12E31E2F1741F533008FA64C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E31E2E1741F533008FA64C /* AudioToolbox.framework */; };
+		12E31E381741FA59008FA64C /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E31E361741FA59008FA64C /* MsgViewController.m */; };
+		12E31E391741FA59008FA64C /* MsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12E31E371741FA59008FA64C /* MsgViewController.xib */; };
 		12E686DA16B69F4E00B81B8C /* NUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E686D916B69F4E00B81B8C /* NUser.m */; };
 		12E686E816B6C71E00B81B8C /* connectionbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E686E016B6C71E00B81B8C /* connectionbase.cpp */; };
 		12E686E916B6C71E00B81B8C /* connectionsqlite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12E686E216B6C71E00B81B8C /* connectionsqlite.cpp */; };
@@ -213,6 +215,9 @@
 		12E31E131741F4E5008FA64C /* UIView+AnimationOptionsForCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AnimationOptionsForCurve.h"; sourceTree = "<group>"; };
 		12E31E141741F4E5008FA64C /* UIView+AnimationOptionsForCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AnimationOptionsForCurve.m"; sourceTree = "<group>"; };
 		12E31E2E1741F533008FA64C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		12E31E351741FA59008FA64C /* MsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgViewController.h; sourceTree = "<group>"; };
+		12E31E361741FA59008FA64C /* MsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
+		12E31E371741FA59008FA64C /* MsgViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgViewController.xib; sourceTree = "<group>"; };
 		12E686D816B69F4E00B81B8C /* NUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NUser.h; path = DataModel/NUser.h; sourceTree = "<group>"; };
 		12E686D916B69F4E00B81B8C /* NUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NUser.m; path = DataModel/NUser.m; sourceTree = "<group>"; };
 		12E686E016B6C71E00B81B8C /* connectionbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connectionbase.cpp; sourceTree = "<group>"; };
@@ -317,6 +322,9 @@
 				1214758D17361991009B33BB /* BookDetailViewController.h */,
 				1214758E17361991009B33BB /* BookDetailViewController.m */,
 				1214758F17361991009B33BB /* BookDetailViewController.xib */,
+				12E31E351741FA59008FA64C /* MsgViewController.h */,
+				12E31E361741FA59008FA64C /* MsgViewController.m */,
+				12E31E371741FA59008FA64C /* MsgViewController.xib */,
 			);
 			path = weShare;
 			sourceTree = "<group>";
@@ -656,6 +664,7 @@
 				12E31E2A1741F4E5008FA64C /* send@2x.png in Resources */,
 				12E31E2B1741F4E5008FA64C /* messageReceived.aiff in Resources */,
 				12E31E2C1741F4E5008FA64C /* messageSent.aiff in Resources */,
+				12E31E391741FA59008FA64C /* MsgViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +705,7 @@
 				12E31E191741F4E5008FA64C /* MessagesViewController.m in Sources */,
 				12E31E1A1741F4E5008FA64C /* NSString+MessagesView.m in Sources */,
 				12E31E2D1741F4E5008FA64C /* UIView+AnimationOptionsForCurve.m in Sources */,
+				12E31E381741FA59008FA64C /* MsgViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

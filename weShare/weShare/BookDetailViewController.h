@@ -18,5 +18,6 @@
 @property (retain, nonatomic) IBOutlet UIImageView *bookThumbnail;
 @property (retain, nonatomic) IBOutlet UILabel *bookLongDes;
 @property (retain, nonatomic) IBOutlet UIButton *btnMsg;
+- (IBAction)onSendMsg:(id)sender;
 
 @end
