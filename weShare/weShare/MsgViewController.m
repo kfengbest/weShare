@@ -75,6 +75,8 @@
 
 static NSString* s_postURL = @"http://www.gokaven.com/cloud_api/index.php?op=SendMessage&sessionid=2beb248c-9208-b5fd-12df-a02d5878574b&replyid=5&friendid=2&isbn=9787564101657";
 
+//static NSString* s_postURL = @"http://localhost/~fengka/cloud_api/index.php?op=SendMessage&sessionid=2beb248c-9208-b5fd-12df-a02d5878574b&replyid=5&friendid=2&isbn=9787564101657";
+
 
 - (void)sendPressed:(UIButton *)sender withText:(NSString *)text
 {
@@ -85,7 +87,7 @@ static NSString* s_postURL = @"http://www.gokaven.com/cloud_api/index.php?op=Sen
     else
         [MessageSoundEffect playMessageReceivedSound];
     
-    [self UpadaPost:text URL:s_postURL];
+    [self postMessage:text URL:s_postURL];
     
     [self finishSend];
 }
@@ -96,17 +98,13 @@ static NSString* s_postURL = @"http://www.gokaven.com/cloud_api/index.php?op=Sen
 }
 
 
--(void)UpadaPost:(NSString *)strcontext URL:(NSString *)urlstr{
+-(void)postMessage:(NSString *)strcontext URL:(NSString *)urlstr{
     
-    NSLog(urlstr);
-    NSLog(strcontext);
-    assert(strcontext != NULL);
-    assert(urlstr != NULL);
     
-    NSData *postData = [strcontext dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
+    NSString* post = [[NSString alloc] initWithFormat:@"message=%@",strcontext];
+  
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:urlstr]];
     [request setHTTPMethod:@"POST"];
@@ -114,12 +112,18 @@ static NSString* s_postURL = @"http://www.gokaven.com/cloud_api/index.php?op=Sen
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
-    NSURLResponse *respone;
-    NSError *err;
-    NSData *myReturn =[NSURLConnection sendSynchronousRequest:request returningResponse:&respone
-                                                        error:err];
+    NSURLResponse *resp = nil;
+    NSError *error = nil;
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
     
-    NSLog(@"%@", [[NSString alloc] initWithData:myReturn encoding:NSUTF8StringEncoding]);
+    if (error) {
+        NSLog(@"Something wrong: %@",[error description]);
+    }else {
+        if (returnData) {
+            NSString *responseString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+            NSLog(@"get %@",responseString);
+        }
+    }
 }
 
 @end
